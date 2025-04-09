@@ -7,6 +7,8 @@
     --text-color: #333;
     --header-bg: #4682B4;
     --header-text: white;
+    --footer-bg: #4682B4;
+    --footer-text: white;
     --border-color: #ddd;
 }
 
@@ -16,6 +18,8 @@
     --text-color: #e0e0e0;
     --header-bg: #2c4c6d;
     --header-text: #f0f0f0;
+    --footer-bg: #2c4c6d;
+    --footer-text: white;
     --border-color: #444;
 }
 
@@ -57,9 +61,15 @@ footer {
     text-align: center;
     margin-top: 30px;
     padding: 20px;
-    background-color: var(--header-bg);
-    color: var(--header-text);
+    background-color: var(--footer-bg);
+    color: var(--footer-text);
     border-radius: 5px;
+}
+
+footer p {
+    color: var(--footer-text);
+    margin: 5px 0;
+    font-weight: 500;
 }
 
 /* ========================= */
@@ -116,7 +126,7 @@ footer {
 .social-links a {
     display: inline-block;
     margin: 0 10px;
-    color: white;
+    color: var(--header-text);
     text-decoration: none;
     font-size: 1.2em;
     transition: transform 0.3s;
@@ -131,6 +141,7 @@ footer {
     height: 30px;
     vertical-align: middle;
     margin-right: 5px;
+    filter: brightness(0) invert(1);
 }
 
 /* Skills Section */
@@ -189,6 +200,7 @@ footer {
     height: 20px;
     vertical-align: middle;
     margin-right: 5px;
+    filter: brightness(0) invert(1);
 }
 
 /* Mermaid Diagrams */
