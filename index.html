@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Phung Thanh Tu - Professional CV</title>
     <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <div>
+    <a href="Phung_Thanh_Tu_CV.pdf" class="download-btn" download>
+        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/adobeacrobatreader.svg" alt="Download" class="download-icon">
+        Download CV (PDF)
+    </a>
+</div>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -67,15 +73,175 @@
                 display: none;
             }
         }
+        .social-links {
+    margin-top: 15px;
+}
+.social-links a {
+    display: inline-block;
+    margin: 0 10px;
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+    transition: transform 0.3s;
+}
+.social-links a:hover {
+    transform: scale(1.2);
+}
+.social-icon {
+    width: 30px;
+    height: 30px;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+        .skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.skill-category {
+    width: 48%;
+    margin-bottom: 20px;
+}
+.skill-bar {
+    margin-bottom: 15px;
+}
+.skill-name {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+.progress-container {
+    background-color: #e0e0e0;
+    height: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.progress {
+    height: 100%;
+    background-color: #4682B4;
+    border-radius: 10px;
+    transition: width 1s;
+}
+@media (max-width: 768px) {
+    .skills-container {
+        flex-direction: column;
+    }
+    .skill-category {
+        width: 100%;
+    }
+    .theme-toggle {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+    }
+    .social-links a {
+        display: block;
+        margin: 10px 0;
+    }
+    .download-btn {
+        display: block;
+        text-align: center;
+    }
+}
+        .download-btn {
+    display: inline-block;
+    background-color: #2E8B57;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+.download-btn:hover {
+    background-color: #1F6E43;
+}
+.download-icon {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+        :root {
+    --bg-color: #f5f5f5;
+    --section-bg: white;
+    --text-color: #333;
+    --header-bg: #4682B4;
+    --header-text: white;
+    --border-color: #ddd;
+}
+
+.dark-mode {
+    --bg-color: #1a1a1a;
+    --section-bg: #2d2d2d;
+    --text-color: #e0e0e0;
+    --header-bg: #2c4c6d;
+    --header-text: #f0f0f0;
+    --border-color: #444;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+header {
+    background-color: var(--header-bg);
+    color: var(--header-text);
+}
+
+.section {
+    background-color: var(--section-bg);
+    border: 1px solid var(--border-color);
+}
+
+h2 {
+    color: var(--header-bg);
+    border-bottom: 2px solid var(--header-bg);
+}
+
+.theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    background-color: var(--header-bg);
+    color: var(--header-text);
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    transition: background-color 0.3s;
+}
+
+.theme-toggle:hover {
+    background-color: var(--header-text);
+    color: var(--header-bg);
+}
     </style>
 </head>
 <body>
+    <button class="theme-toggle" id="themeToggle">🌓</button>
     <header>
         <h1>PHUNG THANH TU</h1>
         <div class="contact-info">
             <p>Email: tuphung010787@gmail.com | Phone: +358 45 234 9495</p>
             <p>Address: Juustenintie 3E66, 00410, Helsinki</p>
         </div>
+        <div class="social-links">
+    <a href="https://www.linkedin.com/in/tuphung010787" target="_blank">
+        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/linkedin.svg" alt="LinkedIn" class="social-icon"> LinkedIn
+    </a>
+    <a href="https://github.com/TuPhung369" target="_blank">
+        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/github.svg" alt="GitHub" class="social-icon"> GitHub
+    </a>
+</div>
     </header>
 
     <div class="section">
@@ -445,20 +611,126 @@
     <footer>
         <p>© 2024 Phung Thanh Tu - Professional CV</p>
         <p class="no-print">This interactive CV was created using Mermaid diagrams
+            <div class="section">
+    <h2>SKILLS & LANGUAGES</h2>
+    <div class="skills-container">
+        <div class="skill-category">
+            <h3>Programming Skills</h3>
+            
+            <div class="skill-bar">
+                <div class="skill-name">React/TypeScript</div>
+                <div class="progress-container">
+                    <div class="progress" style="width: 90%;"></div>
+                </div>
+            </div>
+            
+            <div class="skill-bar">
+                <div class="skill-name">Spring Boot</div>
+                <div class="progress-container">
+                    <div class="progress" style="width: 85%;"></div>
+                </div>
+            </div>
+            
+            <div class="skill-bar">
+                <div class="skill-name">Node.js/Express</div>
+                <div class="progress-container">
+                    <div class="progress" style="width: 80%;"></div>
+                </div>
+            </div>
+            
+            <div class="skill-bar">
+                <div class="skill-name">SQL/NoSQL Databases</div>
+                <div class="progress-container">
+                    <div class="progress" style="width: 85%;"></div>
+                </div>
+            </div>
+            
+            <div class="skill-bar">
+                <div class="skill-name">Authentication/Security</div>
+                <div class="progress-container">
+                    <div class="progress" style="width: 95%;"></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="skill-category">
+            <h3>Languages</h3>
+            
+            <div class="skill-bar">
+                <div class="skill-name">English</div>
+                <div class="progress-container">
+                    <div class="progress" style="width: 90%;"></div>
+                </div>
+            </div>
+            
+            <div class="skill-bar">
+                <div class="skill-name">Vietnamese (Native)</div>
+                <div class="progress-container">
+                    <div class="progress" style="width: 100%;"></div>
+                </div>
+            </div>
+            
+            <div class="skill-bar">
+                <div class="skill-name">Finnish (Basic)</div>
+                <div class="progress-container">
+                    <div class="progress" style="width: 30%;"></div>
+                </div>
+            </div>
+            
+            <h3>Soft Skills</h3>
+            
+            <div class="skill-bar">
+                <div class="skill-name">Team Collaboration</div>
+                <div class="progress-container">
+                    <div class="progress" style="width: 95%;"></div>
+                </div>
+            </div>
+            
+            <div class="skill-bar">
+                <div class="skill-name">Problem Solving</div>
+                <div class="progress-container">
+                    <div class="progress" style="width: 90%;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
                 </footer>
     
-    <script>
-        mermaid.initialize({
-            startOnLoad: true,
-            theme: 'default',
-            securityLevel: 'loose',
-            fontFamily: 'Arial',
-            fontSize: 16,
-            flowchart: {
-                htmlLabels: true,
-                curve: 'basis'
-            }
-        });
-    </script>
+<script>
+    // Mermaid initialization
+    mermaid.initialize({
+        startOnLoad: true,
+        theme: 'default',
+        securityLevel: 'loose',
+        fontFamily: 'Arial',
+        fontSize: 16,
+        flowchart: {
+            htmlLabels: true,
+            curve: 'basis'
+        }
+    });
+    
+    // Dark mode toggle
+    const themeToggle = document.getElementById('themeToggle');
+    
+    // Check for saved theme preference or use device preference
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.body.classList.add('dark-mode');
+    }
+    
+    // Toggle theme
+    themeToggle.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+        const isDark = document.body.classList.contains('dark-mode');
+        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        
+        // Reload Mermaid diagrams to update their theme
+        setTimeout(() => {
+            mermaid.init(undefined, document.querySelectorAll('.mermaid'));
+        }, 100);
+    });
+</script>
 </body>
 </html>
