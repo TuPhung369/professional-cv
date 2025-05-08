@@ -5,7 +5,7 @@
     /* Dark mode is default */
     --bg-color: #121212;
     --section-bg: #1e1e1e;
-    --text-color: #6a6868;
+    --text-color: #e0e0e0;
     --header-bg: #1a3a5f;
     --header-text: #f0f0f0;
     --footer-bg: #1a3a5f;
@@ -23,6 +23,51 @@
     --download-btn-hover: #1F6E43;
     --tech-icon-bg: #1a3a5f;
     --tech-name-color: #4f9cf9;
+
+    /* Enhanced Technical Expertise Variables - Dark Mode */
+    --tech-card-bg: #252525;
+    --tech-card-border: #333;
+    --tech-card-shadow: rgba(0, 0, 0, 0.4);
+
+    /* Frontend Category - Blue Theme */
+    --frontend-primary: #2563eb;
+    --frontend-secondary: #1e40af;
+    --frontend-accent: #3b82f6;
+    --frontend-text: #93c5fd;
+
+    /* Backend Category - Purple Theme */
+    --backend-primary: #7c3aed;
+    --backend-secondary: #5b21b6;
+    --backend-accent: #8b5cf6;
+    --backend-text: #c4b5fd;
+
+    /* Database Category - Green Theme */
+    --database-primary: #059669;
+    --database-secondary: #047857;
+    --database-accent: #10b981;
+    --database-text: #a7f3d0;
+
+    /* DevOps Category - Orange Theme */
+    --devops-primary: #d97706;
+    --devops-secondary: #b45309;
+    --devops-accent: #f59e0b;
+    --devops-text: #fcd34d;
+
+    /* Other Skills Category - Pink Theme */
+    --other-primary: #db2777;
+    --other-secondary: #be185d;
+    --other-accent: #ec4899;
+    --other-text: #fbcfe8;
+
+    /* Mermaid workflow diagram theme */
+    --mermaid-bg: #1e1e1e;
+    --mermaid-node-bg: #2a2a2a;
+    --mermaid-node-border: #4f9cf9;
+    --mermaid-text: #f0f0f0;
+    --mermaid-line: #4f9cf9;
+    --mermaid-actor-bg: #333;
+    --mermaid-actor-border: #4f9cf9;
+
     --strength-item-bg: #1e1e1e;
 }
 
@@ -47,14 +92,51 @@
     --download-btn-hover: #1F6E43;
     --tech-icon-bg: #4682B4;
     --tech-name-color: #4682B4;
-        --strength-item-bg: white;
-        }
 
-        /* ========================= */
-        /* 2. Global Styles */
-        /* ========================= */
-        body {
-        
+    /* Enhanced Technical Expertise Variables - Light Mode */
+    --tech-card-bg: #ffffff;
+    --tech-card-border: #e5e7eb;
+    --tech-card-shadow: rgba(0, 0, 0, 0.1);
+
+    /* Frontend Category - Blue Theme */
+    --frontend-primary: #3b82f6;
+    --frontend-secondary: #2563eb;
+    --frontend-accent: #60a5fa;
+    --frontend-text: #1e40af;
+
+    /* Backend Category - Purple Theme */
+    --backend-primary: #8b5cf6;
+    --backend-secondary: #7c3aed;
+    --backend-accent: #a78bfa;
+    --backend-text: #5b21b6;
+
+    /* Database Category - Green Theme */
+    --database-primary: #10b981;
+    --database-secondary: #059669;
+    --database-accent: #34d399;
+    --database-text: #047857;
+
+    /* DevOps Category - Orange Theme */
+    --devops-primary: #f59e0b;
+    --devops-secondary: #d97706;
+    --devops-accent: #fbbf24;
+    --devops-text: #b45309;
+
+    /* Other Skills Category - Pink Theme */
+    --other-primary: #ec4899;
+    --other-secondary: #db2777;
+    --other-accent: #f472b6;
+    --other-text: #be185d;
+
+    /* Mermaid workflow diagram theme */
+    --mermaid-bg: #ffffff;
+    --mermaid-node-bg: #f5f5f5;
+    --mermaid-node-border: #4682B4;
+    --mermaid-text: #1f2937;
+    --mermaid-line: #4682B4;
+    --mermaid-actor-bg: #e5e7eb;
+    --mermaid-actor-border: #4682B4;
+
     --strength-item-bg: white;
 }
 
@@ -463,21 +545,24 @@ footer p {
 .tech-expertise-container {
     display: flex;
     flex-direction: column;
-    gap: 25px;
+    gap: 30px;
 }
 
 .tech-category {
-    margin-bottom: 35px;
+    margin-bottom: 40px;
+    position: relative;
 }
 
 .tech-category h3 {
     color: var(--accent-color);
-    margin-bottom: 25px;
-    padding-bottom: 10px;
+    margin-bottom: 30px;
+    padding-bottom: 12px;
     border-bottom: 2px solid var(--accent-color);
-    font-size: 1.4em;
+    font-size: 1.5em;
     position: relative;
     display: inline-block;
+    font-weight: 600;
+    letter-spacing: 0.5px;
 }
 
 .tech-category h3::after {
@@ -485,38 +570,47 @@ footer p {
     position: absolute;
     bottom: -2px;
     left: 0;
-    width: 50%;
+    width: 60%;
     height: 2px;
     background: linear-gradient(90deg, var(--accent-color), transparent);
+    animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+    0% { opacity: 0.7; }
+    50% { opacity: 1; }
+    100% { opacity: 0.7; }
 }
 
 .tech-category h3 i {
-    margin-right: 12px;
+    margin-right: 14px;
     color: var(--accent-color);
-    transform: scale(1.2);
+    transform: scale(1.3);
     display: inline-block;
+    vertical-align: middle;
 }
 
 .tech-skills {
     display: grid;
-    gap: 25px;
+    gap: 28px;
     /* Dynamic grid layout based on number of items */
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
 }
 
 /* Base tech skill card */
 .tech-skill {
     display: flex;
-    background-color: var(--section-bg);
-    border-radius: 12px;
+    background-color: var(--tech-card-bg);
+    border-radius: 14px;
     padding: 0;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 8px 20px var(--tech-card-shadow);
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     overflow: hidden;
-    border: 1px solid var(--border-color);
+    border: 1px solid var(--tech-card-border);
     position: relative;
     animation: fadeInUp 0.8s ease-out forwards;
     opacity: 0;
+    backdrop-filter: blur(5px);
 }
 
 @keyframes fadeInUp {
@@ -545,54 +639,140 @@ footer p {
 /* Frontend card style - horizontal with gradient */
 .tech-category:nth-child(1) .tech-skill {
     flex-direction: row;
-    border-left: 4px solid var(--accent-color);
+    border-left: 5px solid var(--frontend-primary);
+    background: linear-gradient(to right, rgba(37, 99, 235, 0.03), transparent);
 }
 
 .tech-category:nth-child(1) .tech-skill:hover {
     transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-    border-color: var(--accent-color);
+    box-shadow: 0 15px 30px rgba(37, 99, 235, 0.2);
+    border-color: var(--frontend-accent);
+    background: linear-gradient(to right, rgba(37, 99, 235, 0.07), rgba(37, 99, 235, 0.01));
 }
 
 .tech-category:nth-child(1) .tech-skill-icon {
-    background: linear-gradient(135deg, var(--tech-icon-bg), #2c5282);
+    background: linear-gradient(135deg, var(--frontend-primary), var(--frontend-secondary));
     border-radius: 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.tech-category:nth-child(1) .tech-skill-icon::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(transparent, rgba(255, 255, 255, 0.1), transparent);
+    transform: rotate(30deg);
+    transition: transform 0.6s;
+}
+
+.tech-category:nth-child(1) .tech-skill:hover .tech-skill-icon::after {
+    transform: translate(100%, 100%) rotate(30deg);
+}
+
+.tech-category:nth-child(1) h3 {
+    color: var(--frontend-primary);
+    border-bottom-color: var(--frontend-primary);
+}
+
+.tech-category:nth-child(1) h3::after {
+    background: linear-gradient(90deg, var(--frontend-primary), transparent);
+}
+
+.tech-category:nth-child(1) h3 i {
+    color: var(--frontend-primary);
+}
+
+.tech-category:nth-child(1) .tech-skill-name {
+    color: var(--frontend-text);
 }
 
 /* Backend card style - vertical with top icon */
 .tech-category:nth-child(2) .tech-skill {
     flex-direction: column;
     text-align: center;
-    border-top: 4px solid #6B46C1;
+    border-top: 5px solid var(--backend-primary);
+    background: linear-gradient(to bottom, rgba(124, 58, 237, 0.03), transparent);
 }
 
 .tech-category:nth-child(2) .tech-skill:hover {
     transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-    border-color: #6B46C1;
+    box-shadow: 0 15px 30px rgba(124, 58, 237, 0.2);
+    border-color: var(--backend-accent);
+    background: linear-gradient(to bottom, rgba(124, 58, 237, 0.07), rgba(124, 58, 237, 0.01));
 }
 
 .tech-category:nth-child(2) .tech-skill-icon {
     width: 100%;
-    height: 80px;
-    background: linear-gradient(135deg, #6B46C1, #805AD5);
-    border-radius: 0;
+    height: 90px;
+    background: linear-gradient(135deg, var(--backend-primary), var(--backend-secondary));
+    border-radius: 0 0 50% 50% / 0 0 15% 15%;
+    position: relative;
+    overflow: hidden;
+}
+
+.tech-category:nth-child(2) .tech-skill-icon::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.2) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+.tech-category:nth-child(2) .tech-skill:hover .tech-skill-icon::before {
+    opacity: 1;
+}
+
+.tech-category:nth-child(2) h3 {
+    color: var(--backend-primary);
+    border-bottom-color: var(--backend-primary);
+}
+
+.tech-category:nth-child(2) h3::after {
+    background: linear-gradient(90deg, var(--backend-primary), transparent);
+}
+
+.tech-category:nth-child(2) h3 i {
+    color: var(--backend-primary);
 }
 
 .tech-category:nth-child(2) .tech-skill-name {
-    color: #4A2899; /* Màu tối hơn cho light mode */
+    color: var(--backend-text);
+    position: relative;
+    display: inline-block;
+    margin-top: 5px;
 }
 
-:root:not(.light-mode) .tech-category:nth-child(2) .tech-skill-name {
-    color: #9F7AEA; /* Màu sáng hơn cho dark mode */
+.tech-category:nth-child(2) .tech-skill-name::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background-color: var(--backend-primary);
+    transition: width 0.3s ease;
+}
+
+.tech-category:nth-child(2) .tech-skill:hover .tech-skill-name::after {
+    width: 50%;
 }
 
 /* Database card style - diagonal design */
 .tech-category:nth-child(3) .tech-skill {
     position: relative;
-    border-radius: 12px;
+    border-radius: 14px;
     border: none;
     overflow: visible;
+    background: linear-gradient(to right bottom, rgba(5, 150, 105, 0.03), transparent);
 }
 
 .tech-category:nth-child(3) .tech-skill::before {
@@ -602,39 +782,82 @@ footer p {
     left: -2px;
     right: -2px;
     bottom: -2px;
-    background: linear-gradient(45deg, #38A169, #48BB78);
+    background: linear-gradient(45deg, var(--database-primary), var(--database-secondary));
     z-index: -1;
-    border-radius: 14px;
+    border-radius: 16px;
     transition: all 0.4s ease;
+    opacity: 0.7;
 }
 
 .tech-category:nth-child(3) .tech-skill:hover {
     transform: translateY(-8px) rotate(1deg);
+    background: linear-gradient(to right bottom, rgba(5, 150, 105, 0.07), rgba(5, 150, 105, 0.01));
 }
 
 .tech-category:nth-child(3) .tech-skill:hover::before {
     transform: scale(1.05);
     filter: blur(5px);
+    opacity: 0.9;
 }
 
 .tech-category:nth-child(3) .tech-skill-icon {
-    background: linear-gradient(135deg, #38A169, #48BB78);
+    background: linear-gradient(135deg, var(--database-primary), var(--database-secondary));
+    position: relative;
+    overflow: hidden;
+}
+
+.tech-category:nth-child(3) .tech-skill-icon::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 70% 30%, rgba(255, 255, 255, 0.3) 0%, transparent 50%);
+    top: 0;
+    left: 0;
+}
+
+.tech-category:nth-child(3) h3 {
+    color: var(--database-primary);
+    border-bottom-color: var(--database-primary);
+}
+
+.tech-category:nth-child(3) h3::after {
+    background: linear-gradient(90deg, var(--database-primary), transparent);
+}
+
+.tech-category:nth-child(3) h3 i {
+    color: var(--database-primary);
 }
 
 .tech-category:nth-child(3) .tech-skill-name {
-    color: #276749; /* Màu tối hơn cho light mode */
+    color: var(--database-text);
+    font-weight: 600;
+    position: relative;
 }
 
-:root:not(.light-mode) .tech-category:nth-child(3) .tech-skill-name {
-    color: #272626; /* Màu sáng hơn cho dark mode */
+.tech-category:nth-child(3) .tech-skill-name::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 8px;
+    background-color: rgba(5, 150, 105, 0.1);
+    bottom: 0;
+    left: -4px;
+    z-index: -1;
+    transition: width 0.3s ease;
+}
+
+.tech-category:nth-child(3) .tech-skill:hover .tech-skill-name::before {
+    width: calc(100% + 8px);
 }
 
 /* DevOps card style - modern with shadow effect */
 .tech-category:nth-child(4) .tech-skill {
     border: none;
     border-radius: 16px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 20px rgba(217, 119, 6, 0.1), 0 6px 6px rgba(217, 119, 6, 0.05);
     overflow: visible;
+    background: linear-gradient(to right, rgba(217, 119, 6, 0.03), transparent);
 }
 
 .tech-category:nth-child(4) .tech-skill::after {
@@ -644,7 +867,7 @@ footer p {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, rgba(237, 137, 54, 0.2), rgba(221, 107, 32, 0.2));
+    background: linear-gradient(135deg, rgba(217, 119, 6, 0.1), rgba(180, 83, 9, 0.05));
     z-index: -1;
     border-radius: 16px;
     transition: all 0.4s ease;
@@ -652,47 +875,133 @@ footer p {
 
 .tech-category:nth-child(4) .tech-skill:hover {
     transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 15px 30px rgba(217, 119, 6, 0.15), 0 10px 10px rgba(217, 119, 6, 0.1);
+    background: linear-gradient(to right, rgba(217, 119, 6, 0.07), rgba(217, 119, 6, 0.01));
 }
 
 .tech-category:nth-child(4) .tech-skill-icon {
-    background: linear-gradient(135deg, #ED8936, #DD6B20);
+    background: linear-gradient(135deg, var(--devops-primary), var(--devops-secondary));
     border-radius: 0 0 50% 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.tech-category:nth-child(4) .tech-skill-icon::before {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 200%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: rotate(35deg) translateX(-150px);
+    top: -50%;
+    left: -10px;
+    transition: transform 0.6s;
+}
+
+.tech-category:nth-child(4) .tech-skill:hover .tech-skill-icon::before {
+    transform: rotate(35deg) translateX(200px);
+}
+
+.tech-category:nth-child(4) h3 {
+    color: var(--devops-primary);
+    border-bottom-color: var(--devops-primary);
+}
+
+.tech-category:nth-child(4) h3::after {
+    background: linear-gradient(90deg, var(--devops-primary), transparent);
+}
+
+.tech-category:nth-child(4) h3 i {
+    color: var(--devops-primary);
 }
 
 .tech-category:nth-child(4) .tech-skill-name {
-    color: #9C4221; /* Màu tối hơn cho light mode */
+    color: var(--devops-text);
+    position: relative;
+    display: inline-block;
 }
 
-:root:not(.light-mode) .tech-category:nth-child(4) .tech-skill-name {
-    color: #F6AD55; /* Màu sáng hơn cho dark mode */
+.tech-category:nth-child(4) .tech-skill-name::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(to right, var(--devops-primary), var(--devops-accent));
+    transition: width 0.3s ease;
+}
+
+.tech-category:nth-child(4) .tech-skill:hover .tech-skill-name::after {
+    width: 100%;
 }
 
 /* Other skills card style - minimalist with accent */
 .tech-category:nth-child(5) .tech-skill {
-    border: 2px solid #D53F8C;
-    border-radius: 8px;
+    border: 2px solid var(--other-primary);
+    border-radius: 12px;
     overflow: hidden;
+    background: linear-gradient(to left, rgba(219, 39, 119, 0.03), transparent);
 }
 
 .tech-category:nth-child(5) .tech-skill:hover {
     transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 15px 30px rgba(219, 39, 119, 0.15);
+    background: linear-gradient(to left, rgba(219, 39, 119, 0.07), rgba(219, 39, 119, 0.01));
 }
 
 .tech-category:nth-child(5) .tech-skill-icon {
-    background: linear-gradient(135deg, #D53F8C, #B83280);
+    background: linear-gradient(135deg, var(--other-primary), var(--other-secondary));
     clip-path: polygon(0 0, 100% 0, 100% 70%, 0% 100%);
     height: 80px;
     width: 80px;
+    position: relative;
+    overflow: hidden;
+}
+
+.tech-category:nth-child(5) .tech-skill-icon::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.3) 0%, transparent 60%);
+}
+
+.tech-category:nth-child(5) h3 {
+    color: var(--other-primary);
+    border-bottom-color: var(--other-primary);
+}
+
+.tech-category:nth-child(5) h3::after {
+    background: linear-gradient(90deg, var(--other-primary), transparent);
+}
+
+.tech-category:nth-child(5) h3 i {
+    color: var(--other-primary);
 }
 
 .tech-category:nth-child(5) .tech-skill-name {
-    color: #97266D; /* Màu tối hơn cho light mode */
+    color: var(--other-text);
+    position: relative;
+    display: inline-block;
 }
 
-:root:not(.light-mode) .tech-category:nth-child(5) .tech-skill-name {
-    color: #F687B3; /* Màu sáng hơn cho dark mode */
+.tech-category:nth-child(5) .tech-skill-name::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 0;
+    background-color: rgba(219, 39, 119, 0.1);
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    transition: height 0.3s ease;
+}
+
+.tech-category:nth-child(5) .tech-skill:hover .tech-skill-name::before {
+    height: 8px;
 }
 
 /* Common styles for all tech skill cards */
@@ -702,34 +1011,99 @@ footer p {
     justify-content: center;
     width: 70px;
     background-color: var(--tech-icon-bg);
-    color: white;
     font-size: 1.8em;
     padding: 15px 0;
-    transition: all 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    /* Allow icons to use their original colors */
+    box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.2);
 }
 
 .tech-skill:hover .tech-skill-icon {
     transform: scale(1.1);
+    filter: brightness(1.2);
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.3);
 }
 
+.tech-skill-icon i, .tech-skill-icon span {
+    filter: none;
+    transform: scale(1.2);
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Specific colors for Font Awesome icons */
+.fa-react, .fa-react-alt {
+    color: #61DAFB; /* React blue */
+}
+
+.fa-vuejs {
+    color: #4FC08D; /* Vue green */
+}
+
+.fa-js, .fa-js-square {
+    color: #F7DF1E; /* JavaScript yellow */
+}
+
+.fa-node-js {
+    color: #339933; /* Node.js green */
+}
+
+.fa-leaf, .fa-seedling {
+    color: #6DB33F; /* Spring green */
+}
+
+.fa-database {
+    color: #336791; /* PostgreSQL blue */
+}
+
+.fa-exchange-alt {
+    color: #FF6C37; /* Swagger orange */
+}
+
+.fa-cubes {
+    color: #FF6C37; /* Microservices orange */
+}
+
+.fa-shield-alt, .fa-lock {
+    color: #FFCA28; /* Security yellow */
+}
+
+.fa-table {
+    color: #4479A1; /* MySQL blue */
+}
+
+.fa-sitemap {
+    color: #4479A1; /* NoSQL blue */
+}
+
+.fa-project-diagram {
+    color: #FF6C37; /* MongoDB orange */
+}
+
+/* Add more icon colors as needed */
+
 /* Add special effects for icons */
-.tech-category:nth-child(1) .tech-skill:hover .tech-skill-icon i {
+.tech-category:nth-child(1) .tech-skill:hover .tech-skill-icon i,
+.tech-category:nth-child(1) .tech-skill:hover .tech-skill-icon span {
     animation: pulse 1s infinite alternate;
 }
 
-.tech-category:nth-child(2) .tech-skill:hover .tech-skill-icon i {
-    animation: spin 2s linear infinite;
-}
-
-.tech-category:nth-child(3) .tech-skill:hover .tech-skill-icon i {
+.tech-category:nth-child(2) .tech-skill:hover .tech-skill-icon i,
+.tech-category:nth-child(2) .tech-skill:hover .tech-skill-icon span {
     animation: bounce 0.8s ease infinite alternate;
 }
 
-.tech-category:nth-child(4) .tech-skill:hover .tech-skill-icon i {
+.tech-category:nth-child(3) .tech-skill:hover .tech-skill-icon i,
+.tech-category:nth-child(3) .tech-skill:hover .tech-skill-icon span {
+    animation: bounce 0.8s ease infinite alternate;
+}
+
+.tech-category:nth-child(4) .tech-skill:hover .tech-skill-icon i,
+.tech-category:nth-child(4) .tech-skill:hover .tech-skill-icon span {
     animation: shake 0.5s ease infinite;
 }
 
-.tech-category:nth-child(5) .tech-skill:hover .tech-skill-icon i {
+.tech-category:nth-child(5) .tech-skill:hover .tech-skill-icon i,
+.tech-category:nth-child(5) .tech-skill:hover .tech-skill-icon span {
     animation: flip 1s ease;
 }
 
@@ -761,67 +1135,98 @@ footer p {
 
 .tech-skill-content {
     flex: 1;
-    padding: 18px;
+    padding: 20px;
+    position: relative;
+    z-index: 1;
 }
 
 .tech-skill-name {
-    font-weight: bold;
-    font-size: 1.2em;
-    margin-bottom: 10px;
-    color: #333; /* Màu tối hơn cho tất cả các theme */
+    font-weight: 600;
+    font-size: 1.25em;
+    margin-bottom: 12px;
     position: relative;
     display: inline-block;
+    letter-spacing: 0.5px;
 }
 
-/* Đảm bảo màu tối hơn trong dark mode */
-:root:not(.light-mode) .tech-skill-name {
-    color: #e0e0e0;
-}
-
-/* Add underline animation effect on hover */
-.tech-skill-name::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: -4px;
-    left: 0;
-    background-color: currentColor;
-    transition: width 0.3s ease;
-}
-
-.tech-skill:hover .tech-skill-name::after {
-    width: 100%;
-}
+/* Default styling for tech skill name */
+.tech-category:nth-child(1) .tech-skill-name { color: var(--frontend-text); }
+.tech-category:nth-child(2) .tech-skill-name { color: var(--backend-text); }
+.tech-category:nth-child(3) .tech-skill-name { color: var(--database-text); }
+.tech-category:nth-child(4) .tech-skill-name { color: var(--devops-text); }
+.tech-category:nth-child(5) .tech-skill-name { color: var(--other-text); }
 
 .tech-skill-details {
     color: var(--text-color);
     font-size: 0.95em;
-    line-height: 1.6;
-    margin-bottom: 12px;
+    line-height: 1.7;
+    margin-bottom: 15px;
+    position: relative;
+    z-index: 1;
 }
 
 .tech-skill-level {
     display: flex;
-    gap: 6px;
-    margin-top: 10px;
+    gap: 8px;
+    margin-top: 12px;
+    align-items: center;
 }
 
 .level-dot {
-    width: 12px;
-    height: 12px;
+    width: 14px;
+    height: 14px;
     border-radius: 50%;
     background-color: var(--skill-dot-empty);
     display: inline-block;
-    transition: transform 0.3s ease, background-color 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
-.level-dot.filled {
-    background-color: var(--skill-dot-filled);
+/* Category-specific level dots */
+.tech-category:nth-child(1) .level-dot.filled {
+    background: linear-gradient(135deg, var(--frontend-primary), var(--frontend-secondary));
+}
+
+.tech-category:nth-child(2) .level-dot.filled {
+    background: linear-gradient(135deg, var(--backend-primary), var(--backend-secondary));
+}
+
+.tech-category:nth-child(3) .level-dot.filled {
+    background: linear-gradient(135deg, var(--database-primary), var(--database-secondary));
+}
+
+.tech-category:nth-child(4) .level-dot.filled {
+    background: linear-gradient(135deg, var(--devops-primary), var(--devops-secondary));
+}
+
+.tech-category:nth-child(5) .level-dot.filled {
+    background: linear-gradient(135deg, var(--other-primary), var(--other-secondary));
 }
 
 .tech-skill:hover .level-dot.filled {
-    transform: scale(1.2);
+    transform: scale(1.3);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Add pulse animation to the last filled dot */
+.tech-skill:hover .level-dot.filled:last-of-type {
+    animation: pulse 1.5s infinite;
+}
+
+/* Add subtle glow effect to filled dots on hover */
+.tech-skill:hover .level-dot.filled::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: inherit;
+    border-radius: 50%;
+    filter: blur(4px);
+    opacity: 0.7;
+    z-index: -1;
 }
 
 /* ========================= */
