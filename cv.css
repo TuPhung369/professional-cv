@@ -200,7 +200,7 @@ footer {
     margin: 5px 0;
     font-size: 1em;
     display: flex;
-    align-items: center;
+    align-items: flex;
     justify-content: center;
 }
 
@@ -893,3 +893,64 @@ footer {
             background: rgba(30, 30, 30, 0.8); /* Nền mờ để nổi bật nội dung */
             border-radius: 10px;
         }
+/* Modal cho ảnh lớn */
+.modal {
+    display: none; /* Ẩn mặc định */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8); /* Nền mờ */
+    z-index: 1000; /* Nằm trên tất cả */
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.modal.show {
+    display: flex;
+    opacity: 1;
+}
+
+.modal-img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px var(--shadow-color);
+    transform: scale(0.8);
+    transition: transform 0.3s ease;
+}
+
+.modal.show .modal-img {
+    transform: scale(1);
+}
+
+/* Nút đóng modal */
+.modal-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: var(--header-bg);
+    color: var(--header-text);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+}
+
+.modal-close:hover {
+    background-color: var(--accent-color);
+}
+
+/* Đảm bảo avatar có thể click */
+.avatar {
+    cursor: pointer;
+}

@@ -272,5 +272,27 @@ function setupEventListeners() {
   window.addEventListener("resize", function () {
     applyDynamicGridLayout();
   });
+
+  // processing for the avatar image
+  const avatar = document.getElementById("avatar");
+  const modal = document.getElementById("avatarModal");
+  const closeModal = document.getElementById("closeModal");
+
+  // open modal when click on
+  avatar.addEventListener("click", () => {
+    modal.classList.add("show");
+  });
+
+  // close modal when click on close button
+  closeModal.addEventListener("click", () => {
+    modal.classList.remove("show");
+  });
+
+  // close modal when click outside the image
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      modal.classList.remove("show");
+    }
+  });
 }
 
