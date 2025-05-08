@@ -4,17 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Phung Thanh Tu - Professional CV</title>
-    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@9.4.0/dist/mermaid.min.js"></script>
+    <script>
+        // Store the original Mermaid content for each diagram
+        window.originalMermaidContent = [];
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            // Save the original content of all Mermaid diagrams
+            document.querySelectorAll('.mermaid').forEach((diagram, index) => {
+                window.originalMermaidContent[index] = diagram.textContent;
+            });
+        });
+    </script>
+    <script>
+        // Mermaid initialization is now handled in cv.js
+        // This prevents duplicate initialization
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="cv.css">
+    <!-- No JavaScript needed for simple mailto: and tel: links -->
     <div>
         <a href="./Phung_Thanh_Tu_CV.pdf" class="download-btn" download>
             <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/adobeacrobatreader.svg" alt="Download" class="download-icon">
             Download CV (PDF)
         </a>
     </div>
+    
+    <!-- No hidden links or extra JavaScript needed -->
 </head>
 <body>
-    <button class="theme-toggle" id="themeToggle">🌓</button>
+    <button class="theme-toggle" id="themeToggle">�</button>
     <header>
         <div class="header-container">
             <div class="avatar-container">
@@ -23,15 +42,29 @@
             <div class="header-info">
                 <h1>PHUNG THANH TU</h1>
                 <div class="contact-info">
-                    <p>Email: tuphung010787@gmail.com | Phone: +358 45 234 9495</p>
-                    <p>Address: Juustenintie 3E66, 00410, Helsinki</p>
+                    <p>
+                        <span class="contact-item">
+                            <i class="fas fa-envelope"></i> Email: 
+                            <a href="mailto:tuphung010787@gmail.com" class="contact-text-link">tuphung010787@gmail.com</a>
+                        </span>
+                    </p>
+                    <p>
+                        <span class="contact-item">
+                            <i class="fas fa-phone"></i> Phone: 
+                            <a href="tel:+358452349495" class="contact-text-link">+358 45 234 9495</a>
+                        </span>
+                    </p>
+                    <p><i class="fas fa-map-marker-alt"></i> Address: Juustenintie 3E, 00410, Helsinki</p>
                 </div>
                 <div class="social-links">
                     <a href="https://www.linkedin.com/in/tuphung010787" target="_blank">
-                        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/linkedin.svg" alt="LinkedIn" class="social-icon"> LinkedIn
+                        <i class="fab fa-linkedin social-icon-fa"></i> LinkedIn
                     </a>
-                    <a href="https://github.com/TuPhung369" target="_blank">
-                        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/github.svg" alt="GitHub" class="social-icon"> GitHub
+                    <a href="https://tuphung369.github.io/Haaga_Backend_Programming/" target="_blank">
+                        <i class="fas fa-code-branch social-icon-fa"></i> Projects
+                    </a>
+                    <a href="https://github.com/TuPhung369/Haaga_Backend_Programming/" target="_blank">
+                        <i class="fab fa-github social-icon-fa"></i> GitHub
                     </a>
                 </div>
             </div>
@@ -39,456 +72,1051 @@
     </header>
 
     <div class="section">
-        <h2>CAREER JOURNEY</h2>
+        <h2>STRENGTHS</h2>
+        <div class="strengths-container">
+            <div class="strength-item">
+                <div class="strength-icon">💼</div>
+                <div class="strength-text">Trustworthy employee</div>
+            </div>
+            <div class="strength-item">
+                <div class="strength-icon">🧩</div>
+                <div class="strength-text">Good problem solver</div>
+            </div>
+            <div class="strength-item">
+                <div class="strength-icon">💪</div>
+                <div class="strength-text">Good physical health</div>
+            </div>
+            <div class="strength-item">
+                <div class="strength-icon">😊</div>
+                <div class="strength-text">Positive person</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>CURRENT POSITION & RECENT EXPERIENCE</h2>
         <div class="mermaid">
-            %%{init: {
-              'theme': 'base',
-              'themeVariables': {
-                'primaryColor': '#4682B4',
-                'primaryTextColor': '#fff',
-                'primaryBorderColor': '#1F456E',
-                'lineColor': '#4682B4',
-                'secondaryColor': '#2E8B57',
-                'tertiaryColor': '#CD5C5C',
-                'fontFamily': 'Arial',
-                'fontSize': '16px'
-              }
-            }}%%
+timeline
+    title CURRENT POSITION & RECENT EXPERIENCE
 
-            timeline
-                title CAREER JOURNEY
+    section Current Position
+        2023-Present : BIT Student @ Haaga Helia UAS
+            : Personal Assistant Application Development
+            : Full-stack implementation (React/TS + Spring Boot)
+            : AI & Speech Processing Integration
+            : 50-member team collaboration (microservices)
+        Apr'24-Feb'25 : Software Development Intern & Junior Developer
+            : HR Management System (Vue.js + Node.js)
+            : Microservices with Spring Boot & Vue.js
+            : Website optimization with Bun
+            : AI team collaboration (React.js + Figma)
 
-                section Current Position
-                    2023-Present : BIT Student @ Haaga Helia UAS
-                        : Personal Assistant Application Development
-                        : Full-stack implementation (React/TS + Spring Boot)
-                        : AI & Speech Processing Integration
-                        : 50-member team collaboration (microservices)
+    section Recent Experience
+        2023 : Store Keeper @ Mermaid Maritime Vietnam
+            : Inventory tracking system management
+            : Digital import/export solutions
+            : Automated reporting
+        2020-2023 : Cleaner Worker
+            : Managed cleaning for 4 towers (250 units each)
+            : Independent responsibility during COVID-19
+        2019-2020 : Warehouse Manager @ TTI Industries
+            : Digital inventory management
+            : KPI dashboards development
+            : Process optimization through data analysis
+        </div>
+    </div>
 
-                section Recent Experience
-                    2023 : Store Keeper @ Mermaid Maritime Vietnam
-                        : Inventory tracking system management
-                        : Digital import/export solutions
-                        : Automated reporting
-                    2019-2020 : Warehouse Manager @ TTI Industries
-                        : Digital inventory management
-                        : KPI dashboards development
-                        : Process optimization through data analysis
-                    2019 : Warehouse Supervisor @ BLUM Vietnam
-                        : SAP & LMS integration
-                        : Digital process documentation
-                        : Data-driven inventory control
+    <div class="section">
+        <h2>PREVIOUS CAREER JOURNEY</h2>
+        <div class="mermaid">
+timeline
+    title PREVIOUS CAREER JOURNEY
 
-                section Previous Experience
-                    2017-2019 : Warehouse Supervisor @ AVERY DENNISON RBIS
-                        : Custom inventory tracking (Microsoft Access)
-                        : Oracle warehouse management
-                        : Automated reporting & analytics
-                    2016-2017 : Warehouse Supervisor @ PANASONIC AVC Vietnam
-                        : Oracle & Vsoft systems management
-                        : KAIZEN process improvements
-                        : Automated reporting systems
+    section Previous Experience
+        2019 : Warehouse Supervisor @ BLUM Vietnam
+            : SAP & LMS integration
+            : Digital process documentation
+            : Data-driven inventory control
+        2017-2019 : Warehouse Supervisor @ AVERY DENNISON RBIS
+            : Custom inventory tracking (Microsoft Access)
+            : Oracle warehouse management
+            : Automated reporting & analytics
+        2016-2017 : Warehouse Supervisor @ PANASONIC AVC Vietnam
+            : Oracle & Vsoft systems management
+            : KAIZEN process improvements
+            : Automated reporting systems
 
-                section Early Career
-                    2012-2015 : Electrical/Mechanical Engineer @ HALLIBURTON
-                        : Technical support across Malaysia, Thailand, China
-                        : Digital documentation systems implementation
-                        : Equipment testing & calibration
-                    2010-2012 : Circuit Design Engineer @ ESILICON Vietnam
-                        : Designed Two Ports Read/Write Memory (28nm TSMC)
-                        : Developed web-based characterization system
-                        : Optimized circuit performance & power consumption
+    section Early Career
+        2012-2015 : Electrical/Mechanical Engineer @ HALLIBURTON
+            : Technical support across Malaysia, Thailand, China
+            : Digital documentation systems implementation
+            : Equipment testing & calibration
+        2010-2012 : Circuit Design Engineer @ ESILICON Vietnam
+            : Designed Two Ports Read/Write Memory (28nm TSMC)
+            : Developed web-based characterization system
+            : Optimized circuit performance & power consumption
         </div>
     </div>
 
     <div class="section">
         <h2>EDUCATION & CERTIFICATIONS</h2>
         <div class="mermaid">
-            %%{init: {
-              'theme': 'base',
-              'themeVariables': {
-                'primaryColor': '#4682B4',
-                'primaryTextColor': '#fff',
-                'primaryBorderColor': '#1F456E',
-                'lineColor': '#4682B4',
-                'secondaryColor': '#2E8B57',
-                'tertiaryColor': '#CD5C5C',
-                'fontFamily': 'Arial',
-                'fontSize': '16px'
-              }
-            }}%%
+timeline
+    title EDUCATION & CERTIFICATIONS
 
-            timeline
-                title EDUCATION & CERTIFICATIONS
+    section Recent Education
+        2023-Present : Business Information Technology
+            : Haaga Helia University of Applied Sciences
+            : Focus on full-stack development and AI integration
+        2023 : SAT 1300 Score
+            : Demonstrated English proficiency
 
-                section Recent Education
-                    2023-Present : Business Information Technology
-                        : Haaga Helia University of Applied Sciences
-                        : Focus on full-stack development and AI integration
-                    2023 : SAT 1300 Score
-                        : Demonstrated English proficiency
+    section Certifications
+        2024 : Hygiene Passport (Finland)
+        2023 : Pattern of Excellence (Adam Khoo Education)
+            : SALESPRO Certification
+            : Wealth Academy Investor (1st winner)
+        2018 : International Driving Permit
+        2013 : Oil & Gas Tech 1 Certificate (Singapore)
+            : Overhead Crane Control Certificate
 
-                section Certifications
-                    2024 : Hygiene Passport (Finland)
-                    2023 : Pattern of Excellence (Adam Khoo Education)
-                        : SALESPRO Certification
-                        : Wealth Academy Investor (1st winner)
-                    2018 : International Driving Permit
-                    2013 : Oil & Gas Tech 1 Certificate (Singapore)
-                        : Overhead Crane Control Certificate
-
-                section University Education
-                    2005-2010 : Bachelor of Electrical & Electronic Engineering
-                        : University of Technology HCMC
-                        : GPA 7.04
-                        : Excellence award scholarship
-                        : Nguyen Huu Tho scholarship
+    section University Education
+        2005-2010 : Bachelor of Electrical & Electronic Engineering
+            : University of Technology HCMC
+            : GPA 7.04
+            : Excellence award scholarship
+            : Nguyen Huu Tho scholarship
         </div>
     </div>
 
+
+
     <div class="section">
         <h2>TECHNICAL EXPERTISE</h2>
-        <div class="mermaid">
-            %%{init: {
-              'theme': 'base',
-              'themeVariables': {
-                'primaryColor': '#4682B4',
-                'primaryTextColor': '#fff',
-                'primaryBorderColor': '#1F456E',
-                'lineColor': '#4682B4',
-                'secondaryColor': '#2E8B57',
-                'tertiaryColor': '#CD5C5C'
-              }
-            }}%%
+        <div class="tech-expertise-container">
+            <div class="tech-category">
+                <h3><i class="fas fa-laptop-code"></i> Frontend Development</h3>
+                <div class="tech-skills">
+                    <div class="tech-skill">
+                        <div class="tech-skill-icon">
+                            <i class="fab fa-react"></i>
+                        </div>
+                        <div class="tech-skill-content">
+                            <div class="tech-skill-name">React.js</div>
+                            <div class="tech-skill-details">Components, Hooks, Redux, Context API</div>
+                            <div class="tech-skill-level">
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tech-skill">
+                        <div class="tech-skill-icon">
+                            <i class="fab fa-vuejs"></i>
+                        </div>
+                        <div class="tech-skill-content">
+                            <div class="tech-skill-name">Vue.js</div>
+                            <div class="tech-skill-details">Vue Components, Vuex State Management, Vue Router</div>
+                            <div class="tech-skill-level">
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tech-skill">
+                        <div class="tech-skill-icon">
+                            <i class="fab fa-js-square"></i>
+                        </div>
+                        <div class="tech-skill-content">
+                            <div class="tech-skill-name">TypeScript</div>
+                            <div class="tech-skill-details">Static Typing, Interfaces, Type Safety</div>
+                            <div class="tech-skill-level">
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tech-skill">
+                        <div class="tech-skill-icon">
+                            <i class="fab fa-js"></i>
+                        </div>
+                        <div class="tech-skill-content">
+                            <div class="tech-skill-name">JavaScript ES6+</div>
+                            <div class="tech-skill-details">Async/Await, ES6 Features, Bun Optimization</div>
+                            <div class="tech-skill-level">
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-            graph TD
-                TechRoot[TECHNICAL EXPERTISE] --> FE[Frontend]
-                TechRoot --> BE[Backend]
-                TechRoot --> DB[Database]
+            <div class="tech-category">
+                <h3><i class="fas fa-server"></i> Backend Development</h3>
+                <div class="tech-skills">
+                    <div class="tech-skill">
+                        <div class="tech-skill-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <div class="tech-skill-content">
+                            <div class="tech-skill-name">Spring Boot</div>
+                            <div class="tech-skill-details">MVC Pattern, REST APIs, JPA/Hibernate</div>
+                            <div class="tech-skill-level">
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tech-skill">
+                        <div class="tech-skill-icon">
+                            <i class="fab fa-node-js"></i>
+                        </div>
+                        <div class="tech-skill-content">
+                            <div class="tech-skill-name">Node.js</div>
+                            <div class="tech-skill-details">Express.js, NPM Ecosystem, Server-side JavaScript</div>
+                            <div class="tech-skill-level">
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tech-skill">
+                        <div class="tech-skill-icon">
+                            <i class="fas fa-exchange-alt"></i>
+                        </div>
+                        <div class="tech-skill-content">
+                            <div class="tech-skill-name">API Design</div>
+                            <div class="tech-skill-details">RESTful Design, OpenAPI/Swagger, API Security</div>
+                            <div class="tech-skill-level">
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tech-skill">
+                        <div class="tech-skill-icon">
+                            <i class="fas fa-cubes"></i>
+                        </div>
+                        <div class="tech-skill-content">
+                            <div class="tech-skill-name">Microservices</div>
+                            <div class="tech-skill-details">Architecture, Service Communication, Scalability</div>
+                            <div class="tech-skill-level">
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-                %% Frontend Development
-                FE --> React[React.js]
-                FE --> TS[TypeScript]
-                FE --> JS[JavaScript ES6+]
+            <div class="tech-category">
+                <h3><i class="fas fa-database"></i> Database Technologies</h3>
+                <div class="tech-skills">
+                    <div class="tech-skill">
+                        <div class="tech-skill-icon">
+                            <i class="fas fa-table"></i>
+                        </div>
+                        <div class="tech-skill-content">
+                            <div class="tech-skill-name">SQL</div>
+                            <div class="tech-skill-details">MySQL, PostgreSQL, Query Optimization</div>
+                            <div class="tech-skill-level">
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tech-skill">
+                        <div class="tech-skill-icon">
+                            <i class="fas fa-sitemap"></i>
+                        </div>
+                        <div class="tech-skill-content">
+                            <div class="tech-skill-name">NoSQL</div>
+                            <div class="tech-skill-details">MongoDB, Firebase, Document Databases</div>
+                            <div class="tech-skill-level">
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tech-skill">
+                        <div class="tech-skill-icon">
+                            <i class="fas fa-project-diagram"></i>
+                        </div>
+                        <div class="tech-skill-content">
+                            <div class="tech-skill-name">ORM Tools</div>
+                            <div class="tech-skill-details">Hibernate, Sequelize, Data Modeling</div>
+                            <div class="tech-skill-level">
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-                React --> Comp[Components]
-                React --> Hooks[Hooks]
-                React --> Redux[Redux]
-
-                TS --> Static[Static Typing]
-                TS --> Interface[Interfaces]
-
-                JS --> Async[Async/Await]
-                JS --> ES6[ES6 Features]
-
-                %% Backend Development
-                BE --> Spring[Spring Boot]
-                BE --> Node[Node.js]
-                BE --> API[API Design]
-
-                Spring --> MVC[MVC Pattern]
-                Spring --> REST[REST APIs]
-                Spring --> JPA[JPA/Hibernate]
-
-                Node --> Express[Express.js]
-                Node --> NPM[NPM Ecosystem]
-
-                API --> RESTful[RESTful Design]
-                API --> Swagger[OpenAPI/Swagger]
-
-                %% Database
-                DB --> SQL[SQL]
-                DB --> NoSQL[NoSQL]
-                DB --> ORM[ORM Tools]
-
-                SQL --> MySQL[MySQL]
-                SQL --> Postgres[PostgreSQL]
-
-                NoSQL --> Mongo[MongoDB]
-                NoSQL --> Firebase[Firebase]
-
-                ORM --> Hibernate[Hibernate]
-                ORM --> Sequelize[Sequelize]
-
-                %% Styling
-                classDef root fill:#4682B4,stroke:#1F456E,stroke-width:2px,color:#fff,font-weight:bold
-                classDef primary fill:#2E8B57,stroke:#1F456E,stroke-width:2px,color:#fff,font-weight:bold
-                classDef secondary fill:#CD5C5C,stroke:#1F456E,stroke-width:2px,color:#fff,font-weight:bold
-                classDef tertiary fill:#9370DB,stroke:#1F456E,stroke-width:2px,color:#fff,font-weight:bold
-
-                class TechRoot root
-                class FE,BE,DB primary
-                class React,TS,JS,Spring,Node,API,SQL,NoSQL,ORM secondary
-                class Comp,Hooks,Redux,Static,Interface,Async,ES6,MVC,REST,JPA,Express,NPM,RESTful,Swagger,MySQL,Postgres,Mongo,Firebase,Hibernate,Sequelize tertiary
+            <div class="tech-category">
+                <h3><i class="fas fa-paint-brush"></i> UI/UX Design</h3>
+                <div class="tech-skills">
+                    <div class="tech-skill">
+                        <div class="tech-skill-icon">
+                            <i class="fab fa-figma"></i>
+                        </div>
+                        <div class="tech-skill-content">
+                            <div class="tech-skill-name">Figma</div>
+                            <div class="tech-skill-details">Prototyping, Component Libraries, Design Systems</div>
+                            <div class="tech-skill-level">
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tech-skill">
+                        <div class="tech-skill-icon">
+                            <i class="fas fa-universal-access"></i>
+                        </div>
+                        <div class="tech-skill-content">
+                            <div class="tech-skill-name">Design Principles</div>
+                            <div class="tech-skill-details">User Experience, Accessibility, Visual Hierarchy</div>
+                            <div class="tech-skill-level">
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tech-skill">
+                        <div class="tech-skill-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <div class="tech-skill-content">
+                            <div class="tech-skill-name">Responsive Design</div>
+                            <div class="tech-skill-details">Mobile-First Approach, Adaptive Layouts, CSS Grid/Flexbox</div>
+                            <div class="tech-skill-level">
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
     <div class="section">
         <h2>AI & DEVOPS EXPERTISE</h2>
-        <div class="mermaid">
-            %%{init: {
-              'theme': 'base',
-              'themeVariables': {
-                'primaryColor': '#4682B4',
-                'primaryTextColor': '#fff',
-                'primaryBorderColor': '#1F456E',
-                'lineColor': '#4682B4',
-                'secondaryColor': '#2E8B57',
-                'tertiaryColor': '#CD5C5C'
-              }
-            }}%%
+        <div class="tech-expertise-container">
+            <div class="tech-category">
+                <h3><i class="fas fa-robot"></i> AI Integration</h3>
+                <div class="tech-skills">
+                    <div class="tech-skill">
+                        <div class="tech-skill-icon">
+                            <i class="fas fa-project-diagram"></i>
+                        </div>
+                        <div class="tech-skill-content">
+                            <div class="tech-skill-name">N8N Workflow</div>
+                            <div class="tech-skill-details">Workflow Design, API Integration, Automation</div>
+                            <div class="tech-skill-level">
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tech-skill">
+                        <div class="tech-skill-icon">
+                            <i class="fas fa-microphone"></i>
+                        </div>
+                        <div class="tech-skill-content">
+                            <div class="tech-skill-name">SpeechBrain</div>
+                            <div class="tech-skill-details">Speech-to-Text, Text-to-Speech, Voice Processing</div>
+                            <div class="tech-skill-level">
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tech-skill">
+                        <div class="tech-skill-icon">
+                            <i class="fas fa-language"></i>
+                        </div>
+                        <div class="tech-skill-content">
+                            <div class="tech-skill-name">Language AI</div>
+                            <div class="tech-skill-details">Multi-language Support, Contextual AI, NLP Processing</div>
+                            <div class="tech-skill-level">
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-            graph TD
-                AIRoot[AI & DEVOPS EXPERTISE] --> AI[AI Integration]
-                AIRoot --> DevOps[DevOps Tools]
-                AIRoot --> ERP[Enterprise Systems]
+            <div class="tech-category">
+                <h3><i class="fas fa-tools"></i> DevOps Tools</h3>
+                <div class="tech-skills">
+                    <div class="tech-skill">
+                        <div class="tech-skill-icon">
+                            <i class="fas fa-code-branch"></i>
+                        </div>
+                        <div class="tech-skill-content">
+                            <div class="tech-skill-name">Version Control</div>
+                            <div class="tech-skill-details">Git, GitHub, Branching Strategies</div>
+                            <div class="tech-skill-level">
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tech-skill">
+                        <div class="tech-skill-icon">
+                            <i class="fas fa-tasks"></i>
+                        </div>
+                        <div class="tech-skill-content">
+                            <div class="tech-skill-name">Project Management</div>
+                            <div class="tech-skill-details">Jira, Agile/Scrum, Sprint Planning</div>
+                            <div class="tech-skill-level">
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tech-skill">
+                        <div class="tech-skill-icon">
+                            <i class="fas fa-sync-alt"></i>
+                        </div>
+                        <div class="tech-skill-content">
+                            <div class="tech-skill-name">CI/CD</div>
+                            <div class="tech-skill-details">GitHub Actions, Docker Basics, Automated Deployment</div>
+                            <div class="tech-skill-level">
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-                %% AI & Integration
-                AI --> N8N[N8N Workflow]
-                AI --> SpeechBrain[SpeechBrain]
-                AI --> NLP[Language AI]
-
-                N8N --> Workflow[Workflow Design]
-                N8N --> Integration[API Integration]
-
-                SpeechBrain --> STT[Speech-to-Text]
-                SpeechBrain --> TTS[Text-to-Speech]
-
-                NLP --> Multi[Multi-language]
-                NLP --> Context[Contextual AI]
-
-                %% DevOps & Tools
-                DevOps --> VC[Version Control]
-                DevOps --> PM[Project Management]
-                DevOps --> CICD[CI/CD]
-
-                VC --> Git[Git]
-                VC --> GitHub[GitHub]
-
-                PM --> Jira[Jira]
-                PM --> Agile[Agile/Scrum]
-
-                CICD --> Actions[GitHub Actions]
-                CICD --> Docker[Docker Basics]
-
-                %% Enterprise Systems
-                ERP --> ERPSystems[ERP Systems]
-                ERP --> WMS[Warehouse Management]
-
-                ERPSystems --> SAP[SAP]
-                ERPSystems --> Oracle[Oracle]
-
-                WMS --> Logistics[Logistics Systems]
-                WMS --> Inventory[Inventory Control]
-
-                %% Styling
-                classDef root fill:#4682B4,stroke:#1F456E,stroke-width:2px,color:#fff,font-weight:bold
-                classDef primary fill:#2E8B57,stroke:#1F456E,stroke-width:2px,color:#fff,font-weight:bold
-                classDef secondary fill:#CD5C5C,stroke:#1F456E,stroke-width:2px,color:#fff,font-weight:bold
-                classDef tertiary fill:#9370DB,stroke:#1F456E,stroke-width:2px,color:#fff,font-weight:bold
-
-                class AIRoot root
-                class AI,DevOps,ERP primary
-                class N8N,SpeechBrain,NLP,VC,PM,CICD,ERPSystems,WMS secondary
-                class Workflow,Integration,STT,TTS,Multi,Context,Git,GitHub,Jira,Agile,Actions,Docker,SAP,Oracle,Logistics,Inventory tertiary
+            <div class="tech-category">
+                <h3><i class="fas fa-building"></i> Enterprise Systems</h3>
+                <div class="tech-skills">
+                    <div class="tech-skill">
+                        <div class="tech-skill-icon">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <div class="tech-skill-content">
+                            <div class="tech-skill-name">ERP Systems</div>
+                            <div class="tech-skill-details">SAP, Oracle, System Integration</div>
+                            <div class="tech-skill-level">
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tech-skill">
+                        <div class="tech-skill-icon">
+                            <i class="fas fa-warehouse"></i>
+                        </div>
+                        <div class="tech-skill-content">
+                            <div class="tech-skill-name">Warehouse Management</div>
+                            <div class="tech-skill-details">Logistics Systems, Inventory Control, Digital Tracking</div>
+                            <div class="tech-skill-level">
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
     <div class="section">
         <h2>AUTHENTICATION EXPERTISE</h2>
-        <div class="mermaid">
-            %%{init: {
-              'theme': 'dark',
-              'themeVariables': {
-                'primaryColor': '#4682B4',
-                'primaryTextColor': '#fff',
-                'primaryBorderColor': '#1F456E',
-                'lineColor': '#4682B4',
-                'secondaryColor': '#2E8B57',
-                'tertiaryColor': '#CD5C5C'
-              }
-            }}%%
+        <div class="tech-expertise-container">
+            <div class="tech-category">
+                <h3><i class="fas fa-key"></i> OAuth2</h3>
+                <div class="tech-skills">
+                    <div class="tech-skill">
+                        <div class="tech-skill-icon">
+                            <i class="fas fa-exchange-alt"></i>
+                        </div>
+                        <div class="tech-skill-content">
+                            <div class="tech-skill-name">Auth Code Flow</div>
+                            <div class="tech-skill-details">Server-side Applications, Secure Token Exchange</div>
+                            <div class="tech-skill-level">
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tech-skill">
+                        <div class="tech-skill-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="tech-skill-content">
+                            <div class="tech-skill-name">PKCE</div>
+                            <div class="tech-skill-details">Mobile & SPA Security, Code Verifier Implementation</div>
+                            <div class="tech-skill-level">
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tech-skill">
+                        <div class="tech-skill-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <div class="tech-skill-content">
+                            <div class="tech-skill-name">Implicit Flow</div>
+                            <div class="tech-skill-details">Legacy SPA Support, Token Management</div>
+                            <div class="tech-skill-level">
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-            graph TD
-                Auth[AUTHENTICATION EXPERTISE] --> OAuth[OAuth2]
-                Auth --> JWT[JWT]
-                Auth --> Social[Social Login]
-                Auth --> Security[Security]
+            <div class="tech-category">
+                <h3><i class="fas fa-id-badge"></i> JWT</h3>
+                <div class="tech-skills">
+                    <div class="tech-skill">
+                        <div class="tech-skill-icon">
+                            <i class="fas fa-layer-group"></i>
+                        </div>
+                        <div class="tech-skill-content">
+                            <div class="tech-skill-name">Token Structure</div>
+                            <div class="tech-skill-details">Header, Payload, Signature Components</div>
+                            <div class="tech-skill-level">
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tech-skill">
+                        <div class="tech-skill-icon">
+                            <i class="fas fa-signature"></i>
+                        </div>
+                        <div class="tech-skill-content">
+                            <div class="tech-skill-name">Signing Algorithms</div>
+                            <div class="tech-skill-details">HMAC, RSA, ECDSA Implementation</div>
+                            <div class="tech-skill-level">
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tech-skill">
+                        <div class="tech-skill-icon">
+                            <i class="fas fa-sync"></i>
+                        </div>
+                        <div class="tech-skill-content">
+                            <div class="tech-skill-name">Refresh Strategy</div>
+                            <div class="tech-skill-details">Token Rotation, Secure Storage, Expiration Handling</div>
+                            <div class="tech-skill-level">
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-                %% OAuth2
-                OAuth --> AuthCode[Auth Code Flow]
-                OAuth --> PKCE[PKCE]
-                OAuth --> Implicit[Implicit Flow]
-
-                %% JWT
-                JWT --> Structure[Token Structure]
-                JWT --> Signing[Signing Algorithms]
-                JWT --> Refresh[Refresh Strategy]
-
-                %% Social Login
-                Social --> Google[Google]
-                Social --> Facebook[Facebook]
-                Social --> GitHub[GitHub]
-
-                %% Security
-                Security --> CSRF[CSRF Protection]
-                Security --> XSS[XSS Prevention]
-                Security --> Storage[Secure Storage]
-
-                %% Styling
-                classDef primary fill:#4682B4,stroke:#1F456E,stroke-width:2px,color:#fff,font-weight:bold
-                classDef secondary fill:#2E8B57,stroke:#1F456E,stroke-width:2px,color:#fff,font-weight:bold
-                classDef tertiary fill:#CD5C5C,stroke:#1F456E,stroke-width:2px,color:#fff,font-weight:bold
-
-                class Auth primary
-                class OAuth,JWT,Social,Security secondary
-                class AuthCode,PKCE,Implicit,Structure,Signing,Refresh,Google,Facebook,GitHub,CSRF,XSS,Storage tertiary
+            <div class="tech-category">
+                <h3><i class="fas fa-users"></i> Social Login & Security</h3>
+                <div class="tech-skills">
+                    <div class="tech-skill">
+                        <div class="tech-skill-icon">
+                            <i class="fab fa-google"></i>
+                        </div>
+                        <div class="tech-skill-content">
+                            <div class="tech-skill-name">Social Providers</div>
+                            <div class="tech-skill-details">Google, Facebook, GitHub Integration</div>
+                            <div class="tech-skill-level">
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tech-skill">
+                        <div class="tech-skill-icon">
+                            <i class="fas fa-user-shield"></i>
+                        </div>
+                        <div class="tech-skill-content">
+                            <div class="tech-skill-name">Security Measures</div>
+                            <div class="tech-skill-details">CSRF Protection, XSS Prevention, Secure Storage</div>
+                            <div class="tech-skill-level">
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
     <div class="section">
-        <h2>FEATURED PROJECT</h2>
-        <div class="mermaid">
-            %%{init: {
-              'theme': 'base',
-              'themeVariables': {
-                'primaryColor': '#4682B4',
-                'primaryTextColor': '#fff',
-                'primaryBorderColor': '#1F456E',
-                'lineColor': '#4682B4',
-                'secondaryColor': '#2E8B57',
-                'tertiaryColor': '#CD5C5C'
-              }
-            }}%%
+        <h2>FEATURED PROJECTS</h2>
+        <div class="tech-expertise-container">
+            <div class="tech-category">
+                <h3><i class="fas fa-robot"></i> Personal Assistant</h3>
+                <div class="tech-skills">
+                    <div class="tech-skill">
+                        <div class="tech-skill-icon">
+                            <i class="fab fa-react"></i>
+                        </div>
+                        <div class="tech-skill-content">
+                            <div class="tech-skill-name">Frontend Development</div>
+                            <div class="tech-skill-details">React + TypeScript, Redux State, Material-UI Components</div>
+                            <div class="tech-skill-level">
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tech-skill">
+                        <div class="tech-skill-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <div class="tech-skill-content">
+                            <div class="tech-skill-name">Backend Development</div>
+                            <div class="tech-skill-details">Spring Boot APIs, Database Design, Microservices Architecture</div>
+                            <div class="tech-skill-level">
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tech-skill">
+                        <div class="tech-skill-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <div class="tech-skill-content">
+                            <div class="tech-skill-name">AI Integration</div>
+                            <div class="tech-skill-details">N8N Workflow, SpeechBrain, NLP Processing</div>
+                            <div class="tech-skill-level">
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tech-skill">
+                        <div class="tech-skill-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="tech-skill-content">
+                            <div class="tech-skill-name">Security Implementation</div>
+                            <div class="tech-skill-details">OAuth2, JWT Auth, Social Login Integration</div>
+                            <div class="tech-skill-level">
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-            graph TD
-                App[FEATURED PROJECT:<br>PERSONAL ASSISTANT] --> FE[Frontend]
-                App --> BE[Backend]
-                App --> AI[AI Services]
-                App --> SEC[Security]
+            <div class="tech-category">
+                <h3><i class="fas fa-users-cog"></i> HR Management System</h3>
+                <div class="tech-skills">
+                    <div class="tech-skill">
+                        <div class="tech-skill-icon">
+                            <i class="fab fa-vuejs"></i>
+                        </div>
+                        <div class="tech-skill-content">
+                            <div class="tech-skill-name">Vue.js Frontend</div>
+                            <div class="tech-skill-details">Vue Components, Vuex State Management, Vue Router</div>
+                            <div class="tech-skill-level">
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tech-skill">
+                        <div class="tech-skill-icon">
+                            <i class="fab fa-node-js"></i>
+                        </div>
+                        <div class="tech-skill-content">
+                            <div class="tech-skill-name">Node.js Backend</div>
+                            <div class="tech-skill-details">Express.js, Database Integration, Authentication</div>
+                            <div class="tech-skill-level">
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tech-skill">
+                        <div class="tech-skill-icon">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <div class="tech-skill-content">
+                            <div class="tech-skill-name">Key Features</div>
+                            <div class="tech-skill-details">Employee Management, Payroll Processing, Reporting</div>
+                            <div class="tech-skill-level">
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-                %% Frontend
-                FE --> React[React + TypeScript]
-                FE --> Redux[Redux]
-                FE --> MUI[Material-UI]
-
-                %% Backend
-                BE --> Spring[Spring Boot]
-                BE --> REST[RESTful APIs]
-                BE --> DB[Database]
-
-                %% AI
-                AI --> N8N[N8N Workflow]
-                AI --> Speech[SpeechBrain]
-                AI --> NLP[NLP]
-
-                %% Security
-                SEC --> OAuth[OAuth2]
-                SEC --> JWT[JWT Auth]
-                SEC --> Social[Social Login]
-
-                %% Styling
-                classDef app fill:#4682B4,stroke:#1F456E,stroke-width:2px,color:#fff,font-weight:bold
-                classDef frontend fill:#61DAFB,stroke:#0591c7,stroke-width:2px,color:#003366,font-weight:bold
-                classDef backend fill:#6DB33F,stroke:#2E8B57,stroke-width:2px,color:#fff,font-weight:bold
-                classDef ai fill:#FF6347,stroke:#B22222,stroke-width:2px,color:#fff,font-weight:bold
-                classDef security fill:#9370DB,stroke:#483D8B,stroke-width:2px,color:#fff,font-weight:bold
-
-                class App app
-                class FE,React,Redux,MUI frontend
-                class BE,Spring,REST,DB backend
-                class AI,N8N,Speech,NLP ai
-                class SEC,OAuth,JWT,Social security
+            <div class="tech-category">
+                <h3><i class="fas fa-tachometer-alt"></i> Website Optimization & AI Team Support</h3>
+                <div class="tech-skills">
+                    <div class="tech-skill">
+                        <div class="tech-skill-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <div class="tech-skill-content">
+                            <div class="tech-skill-name">Bun Optimization</div>
+                            <div class="tech-skill-details">Speed Optimization, Bundle Size Reduction, Dev Experience</div>
+                            <div class="tech-skill-level">
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tech-skill">
+                        <div class="tech-skill-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="tech-skill-content">
+                            <div class="tech-skill-name">Performance Metrics</div>
+                            <div class="tech-skill-details">Load Times, Core Web Vitals, Caching Strategy</div>
+                            <div class="tech-skill-level">
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tech-skill">
+                        <div class="tech-skill-icon">
+                            <i class="fab fa-figma"></i>
+                        </div>
+                        <div class="tech-skill-content">
+                            <div class="tech-skill-name">AI Team Design</div>
+                            <div class="tech-skill-details">Figma Prototyping, Component Library, Developer Handoff</div>
+                            <div class="tech-skill-level">
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tech-skill">
+                        <div class="tech-skill-icon">
+                            <i class="fab fa-react"></i>
+                        </div>
+                        <div class="tech-skill-content">
+                            <div class="tech-skill-name">AI Frontend Implementation</div>
+                            <div class="tech-skill-details">React Components, State Management, UI/UX Implementation</div>
+                            <div class="tech-skill-level">
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                                <span class="level-dot filled"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
     <div class="section">
         <h2>SKILLS & LANGUAGES</h2>
-        <div class="skills-container">
-            <div class="skill-category">
-                <h3>Programming Skills</h3>
-
-                <div class="skill-bar">
-                    <div class="skill-name">Authentication/Security</div>
-                    <div class="progress-container">
-                        <div class="progress" style="width: 95%;"></div>
+        <div class="skills-grid-container">
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-card-header">
+                        <i class="fab fa-react skill-icon"></i>
+                        <h3>Frontend Development</h3>
+                    </div>
+                    <div class="skill-card-content">
+                        <div class="skill-item">
+                            <div class="skill-name-container">
+                                <div class="skill-name">React.js/TypeScript</div>
+                                <div class="skill-percent">80%</div>
+                            </div>
+                            <div class="progress-container">
+                                <div class="progress" style="width: 80%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name-container">
+                                <div class="skill-name">Vue.js/TypeScript</div>
+                                <div class="skill-percent">70%</div>
+                            </div>
+                            <div class="progress-container">
+                                <div class="progress" style="width: 70%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name-container">
+                                <div class="skill-name">UI/UX Design (Figma)</div>
+                                <div class="skill-percent">60%</div>
+                            </div>
+                            <div class="progress-container">
+                                <div class="progress" style="width: 60%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name-container">
+                                <div class="skill-name">Responsive Web Design</div>
+                                <div class="skill-percent">75%</div>
+                            </div>
+                            <div class="progress-container">
+                                <div class="progress" style="width: 75%;"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="skill-bar">
-                    <div class="skill-name">ReactJs/TypeScript</div>
-                    <div class="progress-container">
-                        <div class="progress" style="width: 95%;"></div>
+                <div class="skill-card">
+                    <div class="skill-card-header">
+                        <i class="fas fa-server skill-icon"></i>
+                        <h3>Backend Development</h3>
+                    </div>
+                    <div class="skill-card-content">
+                        <div class="skill-item">
+                            <div class="skill-name-container">
+                                <div class="skill-name">Spring Boot</div>
+                                <div class="skill-percent">80%</div>
+                            </div>
+                            <div class="progress-container">
+                                <div class="progress" style="width: 80%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name-container">
+                                <div class="skill-name">Node.js/Express</div>
+                                <div class="skill-percent">70%</div>
+                            </div>
+                            <div class="progress-container">
+                                <div class="progress" style="width: 70%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name-container">
+                                <div class="skill-name">Microservices Architecture</div>
+                                <div class="skill-percent">70%</div>
+                            </div>
+                            <div class="progress-container">
+                                <div class="progress" style="width: 70%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name-container">
+                                <div class="skill-name">SQL/NoSQL Databases</div>
+                                <div class="skill-percent">70%</div>
+                            </div>
+                            <div class="progress-container">
+                                <div class="progress" style="width: 70%;"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="skill-bar">
-                    <div class="skill-name">VueJs/TypeScript</div>
-                    <div class="progress-container">
-                        <div class="progress" style="width: 95%;"></div>
+                <div class="skill-card">
+                    <div class="skill-card-header">
+                        <i class="fas fa-cogs skill-icon"></i>
+                        <h3>Specialized Skills</h3>
+                    </div>
+                    <div class="skill-card-content">
+                        <div class="skill-item">
+                            <div class="skill-name-container">
+                                <div class="skill-name">Authentication/Security</div>
+                                <div class="skill-percent">80%</div>
+                            </div>
+                            <div class="progress-container">
+                                <div class="progress" style="width: 80%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name-container">
+                                <div class="skill-name">Performance Optimization</div>
+                                <div class="skill-percent">70%</div>
+                            </div>
+                            <div class="progress-container">
+                                <div class="progress" style="width: 70%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name-container">
+                                <div class="skill-name">AI Integration</div>
+                                <div class="skill-percent">70%</div>
+                            </div>
+                            <div class="progress-container">
+                                <div class="progress" style="width: 70%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name-container">
+                                <div class="skill-name">Bun Optimization</div>
+                                <div class="skill-percent">60%</div>
+                            </div>
+                            <div class="progress-container">
+                                <div class="progress" style="width: 60%;"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="skill-bar">
-                    <div class="skill-name">Spring Boot</div>
-                    <div class="progress-container">
-                        <div class="progress" style="width: 90%;"></div>
+                <div class="skill-card">
+                    <div class="skill-card-header">
+                        <i class="fas fa-language skill-icon"></i>
+                        <h3>Languages</h3>
                     </div>
-                </div>
-
-                <div class="skill-bar">
-                    <div class="skill-name">Node.js/ Express</div>
-                    <div class="progress-container">
-                        <div class="progress" style="width: 80%;"></div>
-                    </div>
-                </div>
-
-                <div class="skill-bar">
-                    <div class="skill-name">SQL/ NoSQL Databases</div>
-                    <div class="progress-container">
-                        <div class="progress" style="width: 85%;"></div>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="skill-category">
-                <h3>Languages</h3>
-
-                <div class="skill-bar">
-                    <div class="skill-name">English</div>
-                    <div class="progress-container">
-                        <div class="progress" style="width: 90%;"></div>
-                    </div>
-                </div>
-
-                <div class="skill-bar">
-                    <div class="skill-name">Vietnamese (Native)</div>
-                    <div class="progress-container">
-                        <div class="progress" style="width: 100%;"></div>
-                    </div>
-                </div>
-
-                <div class="skill-bar">
-                    <div class="skill-name">Finnish (Basic)</div>
-                    <div class="progress-container">
-                        <div class="progress" style="width: 30%;"></div>
-                    </div>
-                </div>
-
-                <h3>Soft Skills</h3>
-
-                <div class="skill-bar">
-                    <div class="skill-name">Team Collaboration</div>
-                    <div class="progress-container">
-                        <div class="progress" style="width: 95%;"></div>
-                    </div>
-                </div>
-
-                <div class="skill-bar">
-                    <div class="skill-name">Problem Solving</div>
-                    <div class="progress-container">
-                        <div class="progress" style="width: 95%;"></div>
+                    <div class="skill-card-content">
+                        <div class="skill-item">
+                            <div class="skill-name-container">
+                                <div class="skill-name">English</div>
+                                <div class="skill-percent">70%</div>
+                            </div>
+                            <div class="progress-container">
+                                <div class="progress" style="width: 70%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name-container">
+                                <div class="skill-name">Vietnamese (Native)</div>
+                                <div class="skill-percent">90%</div>
+                            </div>
+                            <div class="progress-container">
+                                <div class="progress" style="width: 90%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name-container">
+                                <div class="skill-name">Finnish (Basic)</div>
+                                <div class="skill-percent">20%</div>
+                            </div>
+                            <div class="progress-container">
+                                <div class="progress" style="width: 20%;"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -496,11 +1124,11 @@
     </div>
 
     <footer>
-        <p>© 2024 Phung Thanh Tu - Professional CV</p>
-        <p class="no-print">This interactive CV was created using Mermaid diagrams</p>
+        <p>© 2025 Phung Thanh Tu</p>
     </footer>
 
     <script src="cv.js"></script>
+    <!-- cv.js already handles Mermaid initialization -->
 </body>
 </html>
 
