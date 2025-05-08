@@ -5,7 +5,7 @@
     /* Dark mode is default */
     --bg-color: #121212;
     --section-bg: #1e1e1e;
-    --text-color: #e0e0e0;
+    --text-color: #6a6868;
     --header-bg: #1a3a5f;
     --header-text: #f0f0f0;
     --footer-bg: #1a3a5f;
@@ -13,7 +13,7 @@
     --border-color: #333;
     --accent-color: #4f9cf9;
     --secondary-accent: #ffeb3b;
-    --icon-color: #ffeb3b;
+    --icon-color: #ffffff;
     --skill-bg: #2a2a2a;
     --skill-dot-empty: #444;
     --skill-dot-filled: #4f9cf9;
@@ -37,7 +37,7 @@
     --border-color: #ddd;
     --accent-color: #4682B4;
     --secondary-accent: #ff9800;
-    --icon-color: #ff9800;
+    --icon-color: #ffffff;
     --skill-bg: #f0f0f0;
     --skill-dot-empty: #e0e0e0;
     --skill-dot-filled: #7853CE;
