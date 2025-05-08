@@ -40,13 +40,21 @@
     --icon-color: #ff9800;
     --skill-bg: #f0f0f0;
     --skill-dot-empty: #e0e0e0;
-    --skill-dot-filled: #4682B4;
+    --skill-dot-filled: #7853CE;
     --hover-bg: rgba(0, 0, 0, 0.05);
     --shadow-color: rgba(0, 0, 0, 0.1);
     --download-btn-bg: #2E8B57;
     --download-btn-hover: #1F6E43;
     --tech-icon-bg: #4682B4;
     --tech-name-color: #4682B4;
+        --strength-item-bg: white;
+        }
+
+        /* ========================= */
+        /* 2. Global Styles */
+        /* ========================= */
+        body {
+        
     --strength-item-bg: white;
 }
 
@@ -459,46 +467,235 @@ footer p {
 }
 
 .tech-category {
-    margin-bottom: 25px;
+    margin-bottom: 35px;
 }
 
 .tech-category h3 {
     color: var(--accent-color);
-    margin-bottom: 20px;
-    padding-bottom: 8px;
+    margin-bottom: 25px;
+    padding-bottom: 10px;
     border-bottom: 2px solid var(--accent-color);
-    font-size: 1.3em;
+    font-size: 1.4em;
+    position: relative;
+    display: inline-block;
+}
+
+.tech-category h3::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 50%;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent-color), transparent);
 }
 
 .tech-category h3 i {
-    margin-right: 10px;
+    margin-right: 12px;
     color: var(--accent-color);
+    transform: scale(1.2);
+    display: inline-block;
 }
 
 .tech-skills {
     display: grid;
-    gap: 20px;
+    gap: 25px;
     /* Dynamic grid layout based on number of items */
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
 }
 
+/* Base tech skill card */
 .tech-skill {
     display: flex;
     background-color: var(--section-bg);
     border-radius: 12px;
     padding: 0;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    transition: all 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     overflow: hidden;
     border: 1px solid var(--border-color);
+    position: relative;
+    animation: fadeInUp 0.8s ease-out forwards;
+    opacity: 0;
 }
 
-.tech-skill:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 15px var(--shadow-color);
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Add staggered animation delay for each card */
+.tech-skill:nth-child(1) { animation-delay: 0.1s; }
+.tech-skill:nth-child(2) { animation-delay: 0.2s; }
+.tech-skill:nth-child(3) { animation-delay: 0.3s; }
+.tech-skill:nth-child(4) { animation-delay: 0.4s; }
+.tech-skill:nth-child(5) { animation-delay: 0.5s; }
+.tech-skill:nth-child(6) { animation-delay: 0.6s; }
+.tech-skill:nth-child(7) { animation-delay: 0.7s; }
+.tech-skill:nth-child(8) { animation-delay: 0.8s; }
+.tech-skill:nth-child(9) { animation-delay: 0.9s; }
+.tech-skill:nth-child(10) { animation-delay: 1.0s; }
+
+/* Frontend card style - horizontal with gradient */
+.tech-category:nth-child(1) .tech-skill {
+    flex-direction: row;
+    border-left: 4px solid var(--accent-color);
+}
+
+.tech-category:nth-child(1) .tech-skill:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
     border-color: var(--accent-color);
 }
 
+.tech-category:nth-child(1) .tech-skill-icon {
+    background: linear-gradient(135deg, var(--tech-icon-bg), #2c5282);
+    border-radius: 0;
+}
+
+/* Backend card style - vertical with top icon */
+.tech-category:nth-child(2) .tech-skill {
+    flex-direction: column;
+    text-align: center;
+    border-top: 4px solid #6B46C1;
+}
+
+.tech-category:nth-child(2) .tech-skill:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    border-color: #6B46C1;
+}
+
+.tech-category:nth-child(2) .tech-skill-icon {
+    width: 100%;
+    height: 80px;
+    background: linear-gradient(135deg, #6B46C1, #805AD5);
+    border-radius: 0;
+}
+
+.tech-category:nth-child(2) .tech-skill-name {
+    color: #4A2899; /* Màu tối hơn cho light mode */
+}
+
+:root:not(.light-mode) .tech-category:nth-child(2) .tech-skill-name {
+    color: #9F7AEA; /* Màu sáng hơn cho dark mode */
+}
+
+/* Database card style - diagonal design */
+.tech-category:nth-child(3) .tech-skill {
+    position: relative;
+    border-radius: 12px;
+    border: none;
+    overflow: visible;
+}
+
+.tech-category:nth-child(3) .tech-skill::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, #38A169, #48BB78);
+    z-index: -1;
+    border-radius: 14px;
+    transition: all 0.4s ease;
+}
+
+.tech-category:nth-child(3) .tech-skill:hover {
+    transform: translateY(-8px) rotate(1deg);
+}
+
+.tech-category:nth-child(3) .tech-skill:hover::before {
+    transform: scale(1.05);
+    filter: blur(5px);
+}
+
+.tech-category:nth-child(3) .tech-skill-icon {
+    background: linear-gradient(135deg, #38A169, #48BB78);
+}
+
+.tech-category:nth-child(3) .tech-skill-name {
+    color: #276749; /* Màu tối hơn cho light mode */
+}
+
+:root:not(.light-mode) .tech-category:nth-child(3) .tech-skill-name {
+    color: #272626; /* Màu sáng hơn cho dark mode */
+}
+
+/* DevOps card style - modern with shadow effect */
+.tech-category:nth-child(4) .tech-skill {
+    border: none;
+    border-radius: 16px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.1);
+    overflow: visible;
+}
+
+.tech-category:nth-child(4) .tech-skill::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(237, 137, 54, 0.2), rgba(221, 107, 32, 0.2));
+    z-index: -1;
+    border-radius: 16px;
+    transition: all 0.4s ease;
+}
+
+.tech-category:nth-child(4) .tech-skill:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.1);
+}
+
+.tech-category:nth-child(4) .tech-skill-icon {
+    background: linear-gradient(135deg, #ED8936, #DD6B20);
+    border-radius: 0 0 50% 0;
+}
+
+.tech-category:nth-child(4) .tech-skill-name {
+    color: #9C4221; /* Màu tối hơn cho light mode */
+}
+
+:root:not(.light-mode) .tech-category:nth-child(4) .tech-skill-name {
+    color: #F6AD55; /* Màu sáng hơn cho dark mode */
+}
+
+/* Other skills card style - minimalist with accent */
+.tech-category:nth-child(5) .tech-skill {
+    border: 2px solid #D53F8C;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.tech-category:nth-child(5) .tech-skill:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.tech-category:nth-child(5) .tech-skill-icon {
+    background: linear-gradient(135deg, #D53F8C, #B83280);
+    clip-path: polygon(0 0, 100% 0, 100% 70%, 0% 100%);
+    height: 80px;
+    width: 80px;
+}
+
+.tech-category:nth-child(5) .tech-skill-name {
+    color: #97266D; /* Màu tối hơn cho light mode */
+}
+
+:root:not(.light-mode) .tech-category:nth-child(5) .tech-skill-name {
+    color: #F687B3; /* Màu sáng hơn cho dark mode */
+}
+
+/* Common styles for all tech skill cards */
 .tech-skill-icon {
     display: flex;
     align-items: center;
@@ -508,31 +705,106 @@ footer p {
     color: white;
     font-size: 1.8em;
     padding: 15px 0;
+    transition: all 0.3s ease;
+}
+
+.tech-skill:hover .tech-skill-icon {
+    transform: scale(1.1);
+}
+
+/* Add special effects for icons */
+.tech-category:nth-child(1) .tech-skill:hover .tech-skill-icon i {
+    animation: pulse 1s infinite alternate;
+}
+
+.tech-category:nth-child(2) .tech-skill:hover .tech-skill-icon i {
+    animation: spin 2s linear infinite;
+}
+
+.tech-category:nth-child(3) .tech-skill:hover .tech-skill-icon i {
+    animation: bounce 0.8s ease infinite alternate;
+}
+
+.tech-category:nth-child(4) .tech-skill:hover .tech-skill-icon i {
+    animation: shake 0.5s ease infinite;
+}
+
+.tech-category:nth-child(5) .tech-skill:hover .tech-skill-icon i {
+    animation: flip 1s ease;
+}
+
+@keyframes pulse {
+    from { transform: scale(1); }
+    to { transform: scale(1.2); }
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes bounce {
+    from { transform: translateY(0); }
+    to { transform: translateY(-10px); }
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
+@keyframes flip {
+    0% { transform: perspective(400px) rotateY(0); }
+    100% { transform: perspective(400px) rotateY(360deg); }
 }
 
 .tech-skill-content {
     flex: 1;
-    padding: 15px;
+    padding: 18px;
 }
 
 .tech-skill-name {
     font-weight: bold;
     font-size: 1.2em;
-    margin-bottom: 8px;
-    color: var(--tech-name-color);
+    margin-bottom: 10px;
+    color: #333; /* Màu tối hơn cho tất cả các theme */
+    position: relative;
+    display: inline-block;
+}
+
+/* Đảm bảo màu tối hơn trong dark mode */
+:root:not(.light-mode) .tech-skill-name {
+    color: #e0e0e0;
+}
+
+/* Add underline animation effect on hover */
+.tech-skill-name::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: currentColor;
+    transition: width 0.3s ease;
+}
+
+.tech-skill:hover .tech-skill-name::after {
+    width: 100%;
 }
 
 .tech-skill-details {
     color: var(--text-color);
-    font-size: 0.9em;
-    line-height: 1.5;
-    margin-bottom: 10px;
+    font-size: 0.95em;
+    line-height: 1.6;
+    margin-bottom: 12px;
 }
 
 .tech-skill-level {
     display: flex;
-    gap: 5px;
-    margin-top: 8px;
+    gap: 6px;
+    margin-top: 10px;
 }
 
 .level-dot {
@@ -541,10 +813,15 @@ footer p {
     border-radius: 50%;
     background-color: var(--skill-dot-empty);
     display: inline-block;
+    transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
 .level-dot.filled {
     background-color: var(--skill-dot-filled);
+}
+
+.tech-skill:hover .level-dot.filled {
+    transform: scale(1.2);
 }
 
 /* ========================= */
@@ -593,11 +870,25 @@ footer p {
     
     .tech-skills {
         grid-template-columns: 1fr !important; /* Override the dynamic grid layout on mobile */
+        gap: 20px;
     }
     
-    .tech-skill {
+    /* Ensure all cards have a consistent layout on mobile */
+    .tech-skill, 
+    .tech-category:nth-child(2) .tech-skill,
+    .tech-category:nth-child(3) .tech-skill,
+    .tech-category:nth-child(4) .tech-skill,
+    .tech-category:nth-child(5) .tech-skill {
         flex-direction: row;
         width: 100%;
+        text-align: left;
+    }
+    
+    .tech-category:nth-child(2) .tech-skill-icon,
+    .tech-category:nth-child(5) .tech-skill-icon {
+        width: 60px;
+        height: auto;
+        clip-path: none;
     }
     
     .tech-skill-icon {
